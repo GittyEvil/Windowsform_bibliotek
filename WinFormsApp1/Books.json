@@ -1,0 +1,702 @@
+[
+  {
+    "Titel": "Things Fall Apart",
+    "Serienummer": 1958,
+    "Antal": 209,
+    "Författare": "Chinua",
+    "Ledig": true
+  },
+  {
+    "Titel": "Fairy tales",
+    "Serienummer": 1836,
+    "Antal": 784,
+    "Författare": "Hans Christian Andersen",
+    "Ledig": true
+  },
+  {
+    "Titel": "The Divine Comedy",
+    "Serienummer": 1315,
+    "Antal": 928,
+    "Författare": "Dante Alighieri",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Epic Of Gilgamesh",
+    "Serienummer": -1700,
+    "Antal": 160,
+    "Författare": "Unknown",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Book Of Job",
+    "Serienummer": -600,
+    "Antal": 176,
+    "Författare": "Unknown",
+    "Ledig": false
+  },
+  {
+    "Titel": "One Thousand and One Nights",
+    "Serienummer": 1200,
+    "Antal": 288,
+    "Författare": "Unknown",
+    "Ledig": false
+  },
+  {
+    "Titel": "Njál's Saga",
+    "Serienummer": 1350,
+    "Antal": 384,
+    "Författare": "Unknown",
+    "Ledig": false
+  },
+  {
+    "Titel": "Pride and Prejudice",
+    "Serienummer": 1813,
+    "Antal": 226,
+    "Författare": "Jane Austen",
+    "Ledig": false
+  },
+  {
+    "Titel": "Le Père Goriot",
+    "Serienummer": 1835,
+    "Antal": 443,
+    "Författare": "Honoré de Balzac",
+    "Ledig": false
+  },
+  {
+    "Titel": "Molloy, Malone Dies, The Unnamable, the trilogy",
+    "Serienummer": 1952,
+    "Antal": 256,
+    "Författare": "Samuel Beckett",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Decameron",
+    "Serienummer": 1351,
+    "Antal": 1024,
+    "Författare": "Giovanni Boccaccio",
+    "Ledig": false
+  },
+  {
+    "Titel": "Ficciones",
+    "Serienummer": 1965,
+    "Antal": 224,
+    "Författare": "Jorge Luis Borges",
+    "Ledig": false
+  },
+  {
+    "Titel": "Wuthering Heights",
+    "Serienummer": 1847,
+    "Antal": 342,
+    "Författare": "Emily Brontë",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Stranger",
+    "Serienummer": 1942,
+    "Antal": 185,
+    "Författare": "Albert Camus",
+    "Ledig": false
+  },
+  {
+    "Titel": "Poems",
+    "Serienummer": 1952,
+    "Antal": 320,
+    "Författare": "Paul Celan",
+    "Ledig": false
+  },
+  {
+    "Titel": "Journey to the End of the Night",
+    "Serienummer": 1932,
+    "Antal": 505,
+    "Författare": "Louis-Ferdinand Céline",
+    "Ledig": false
+  },
+  {
+    "Titel": "Don Quijote De La Mancha",
+    "Serienummer": 1610,
+    "Antal": 1056,
+    "Författare": "Miguel de Cervantes",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Canterbury Tales",
+    "Serienummer": 1450,
+    "Antal": 544,
+    "Författare": "Geoffrey Chaucer",
+    "Ledig": false
+  },
+  {
+    "Titel": "Stories",
+    "Serienummer": 1886,
+    "Antal": 194,
+    "Författare": "Anton Chekhov",
+    "Ledig": false
+  },
+  {
+    "Titel": "Nostromo",
+    "Serienummer": 1904,
+    "Antal": 320,
+    "Författare": "Joseph Conrad",
+    "Ledig": false
+  },
+  {
+    "Titel": "Great Expectations",
+    "Serienummer": 1861,
+    "Antal": 194,
+    "Författare": "Charles Dickens",
+    "Ledig": false
+  },
+  {
+    "Titel": "Jacques the Fatalist",
+    "Serienummer": 1796,
+    "Antal": 596,
+    "Författare": "Denis Diderot",
+    "Ledig": false
+  },
+  {
+    "Titel": "Berlin Alexanderplatz",
+    "Serienummer": 1929,
+    "Antal": 600,
+    "Författare": "Alfred Döblin",
+    "Ledig": false
+  },
+  {
+    "Titel": "Crime and Punishment",
+    "Serienummer": 1866,
+    "Antal": 551,
+    "Författare": "Fyodor Dostoevsky",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Idiot",
+    "Serienummer": 1869,
+    "Antal": 656,
+    "Författare": "Fyodor Dostoevsky",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Possessed",
+    "Serienummer": 1872,
+    "Antal": 768,
+    "Författare": "Fyodor Dostoevsky",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Brothers Karamazov",
+    "Serienummer": 1880,
+    "Antal": 824,
+    "Författare": "Fyodor Dostoevsky",
+    "Ledig": false
+  },
+  {
+    "Titel": "Middlemarch",
+    "Serienummer": 1871,
+    "Antal": 800,
+    "Författare": "George Eliot",
+    "Ledig": false
+  },
+  {
+    "Titel": "Invisible Man",
+    "Serienummer": 1952,
+    "Antal": 581,
+    "Författare": "Ralph Ellison",
+    "Ledig": false
+  },
+  {
+    "Titel": "Medea",
+    "Serienummer": -431,
+    "Antal": 104,
+    "Författare": "Euripides",
+    "Ledig": false
+  },
+  {
+    "Titel": "Absalom, Absalom!",
+    "Serienummer": 1936,
+    "Antal": 313,
+    "Författare": "William Faulkner",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Sound and the Fury",
+    "Serienummer": 1929,
+    "Antal": 326,
+    "Författare": "William Faulkner",
+    "Ledig": false
+  },
+  {
+    "Titel": "Madame Bovary",
+    "Serienummer": 1857,
+    "Antal": 528,
+    "Författare": "Gustave Flaubert",
+    "Ledig": false
+  },
+  {
+    "Titel": "Sentimental Education",
+    "Serienummer": 1869,
+    "Antal": 606,
+    "Författare": "Gustave Flaubert",
+    "Ledig": false
+  },
+  {
+    "Titel": "Gypsy Ballads",
+    "Serienummer": 1928,
+    "Antal": 218,
+    "Författare": "Federico García Lorca",
+    "Ledig": false
+  },
+  {
+    "Titel": "One Hundred serienummers of Solitude",
+    "Serienummer": 1967,
+    "Antal": 417,
+    "Författare": "Gabriel García Márquez",
+    "Ledig": false
+  },
+  {
+    "Titel": "Love in the Time of Cholera",
+    "Serienummer": 1985,
+    "Antal": 368,
+    "Författare": "Gabriel García Márquez",
+    "Ledig": false
+  },
+  {
+    "Titel": "Faust",
+    "Serienummer": 1832,
+    "Antal": 158,
+    "Författare": "Johann Wolfgang von Goethe",
+    "Ledig": false
+  },
+  {
+    "Titel": "Dead Souls",
+    "Serienummer": 1842,
+    "Antal": 432,
+    "Författare": "Nikolai Gogol",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Tin Drum",
+    "Serienummer": 1959,
+    "Antal": 600,
+    "Författare": "Günter Grass",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Devil to Pay in the Backlands",
+    "Serienummer": 1956,
+    "Antal": 494,
+    "Författare": "João Guimarães Rosa",
+    "Ledig": false
+  },
+  {
+    "Titel": "Hunger",
+    "Serienummer": 1890,
+    "Antal": 176,
+    "Författare": "Knut Hamsun",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Old Man and the Sea",
+    "Serienummer": 1952,
+    "Antal": 128,
+    "Författare": "Ernest Hemingway",
+    "Ledig": false
+  },
+  {
+    "Titel": "Iliad",
+    "Serienummer": -735,
+    "Antal": 608,
+    "Författare": "Homer",
+    "Ledig": false
+  },
+  {
+    "Titel": "Odyssey",
+    "Serienummer": -800,
+    "Antal": 374,
+    "Författare": "Homer",
+    "Ledig": false
+  },
+  {
+    "Titel": "A Doll's House",
+    "Serienummer": 1879,
+    "Antal": 68,
+    "Författare": "Henrik Ibsen",
+    "Ledig": false
+  },
+  {
+    "Titel": "Ulysses",
+    "Serienummer": 1922,
+    "Antal": 228,
+    "Författare": "James Joyce",
+    "Ledig": false
+  },
+  {
+    "Titel": "Stories",
+    "Serienummer": 1924,
+    "Antal": 488,
+    "Författare": "Franz Kafka",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Trial",
+    "Serienummer": 1925,
+    "Antal": 160,
+    "Författare": "Franz Kafka",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Castle",
+    "Serienummer": 1926,
+    "Antal": 352,
+    "Författare": "Franz Kafka",
+    "Ledig": false
+  },
+  {
+    "Titel": "The recognition of Shakuntala",
+    "Serienummer": 150,
+    "Antal": 147,
+    "Författare": "Kālidāsa",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Sound of the Mountain",
+    "Serienummer": 1954,
+    "Antal": 288,
+    "Författare": "Yasunari Kawabata",
+    "Ledig": false
+  },
+  {
+    "Titel": "Zorba the Greek",
+    "Serienummer": 1946,
+    "Antal": 368,
+    "Författare": "Nikos Kazantzakis",
+    "Ledig": false
+  },
+  {
+    "Titel": "Sons and Lovers",
+    "Serienummer": 1913,
+    "Antal": 432,
+    "Författare": "D. H. Lawrence",
+    "Ledig": false
+  },
+  {
+    "Titel": "Independent People",
+    "Serienummer": 1934,
+    "Antal": 470,
+    "Författare": "Halldór Laxness",
+    "Ledig": false
+  },
+  {
+    "Titel": "Poems",
+    "Serienummer": 1818,
+    "Antal": 184,
+    "Författare": "Giacomo Leopardi",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Golden Notebook",
+    "Serienummer": 1962,
+    "Antal": 688,
+    "Författare": "Doris Lessing",
+    "Ledig": false
+  },
+  {
+    "Titel": "Pippi Longstocking",
+    "Serienummer": 1945,
+    "Antal": 160,
+    "Författare": "Astrid Lindgren",
+    "Ledig": false
+  },
+  {
+    "Titel": "Diary of a Madman",
+    "Serienummer": 1918,
+    "Antal": 389,
+    "Författare": "Lu Xun",
+    "Ledig": false
+  },
+  {
+    "Titel": "Children of Gebelawi",
+    "Serienummer": 1959,
+    "Antal": 355,
+    "Författare": "Naguib Mahfouz",
+    "Ledig": false
+  },
+  {
+    "Titel": "Buddenbrooks",
+    "Serienummer": 1901,
+    "Antal": 736,
+    "Författare": "Thomas Mann",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Magic Mountain",
+    "Serienummer": 1924,
+    "Antal": 720,
+    "Författare": "Thomas Mann",
+    "Ledig": false
+  },
+  {
+    "Titel": "Moby Dick",
+    "Serienummer": 1851,
+    "Antal": 378,
+    "Författare": "Herman Melville",
+    "Ledig": false
+  },
+  {
+    "Titel": "Essays",
+    "Serienummer": 1595,
+    "Antal": 404,
+    "Författare": "Michel de Montaigne",
+    "Ledig": false
+  },
+  {
+    "Titel": "History",
+    "Serienummer": 1974,
+    "Antal": 600,
+    "Författare": "Elsa Morante",
+    "Ledig": false
+  },
+  {
+    "Titel": "Beloved",
+    "Serienummer": 1987,
+    "Antal": 321,
+    "Författare": "Toni Morrison",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Tale of Genji",
+    "Serienummer": 1006,
+    "Antal": 1360,
+    "Författare": "Murasaki Shikibu",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Man Without Qualities",
+    "Serienummer": 1931,
+    "Antal": 365,
+    "Författare": "Robert Musil",
+    "Ledig": false
+  },
+  {
+    "Titel": "Lolita",
+    "Serienummer": 1955,
+    "Antal": 317,
+    "Författare": "Vladimir Nabokov",
+    "Ledig": false
+  },
+  {
+    "Titel": "Nineteen Eighty-Four",
+    "Serienummer": 1949,
+    "Antal": 272,
+    "Författare": "George Orwell",
+    "Ledig": false
+  },
+  {
+    "Titel": "Metamorphoses",
+    "Serienummer": 100,
+    "Antal": 576,
+    "Författare": "Ovid",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Book of Disquiet",
+    "Serienummer": 1928,
+    "Antal": 272,
+    "Författare": "Fernando Pessoa",
+    "Ledig": false
+  },
+  {
+    "Titel": "Tales",
+    "Serienummer": 1950,
+    "Antal": 842,
+    "Författare": "Edgar Allan Poe",
+    "Ledig": false
+  },
+  {
+    "Titel": "In Search of Lost Time",
+    "Serienummer": 1920,
+    "Antal": 2408,
+    "Författare": "Marcel Proust",
+    "Ledig": false
+  },
+  {
+    "Titel": "Gargantua and Pantagruel",
+    "Serienummer": 1533,
+    "Antal": 623,
+    "Författare": "François Rabelais",
+    "Ledig": false
+  },
+  {
+    "Titel": "Pedro Páramo",
+    "Serienummer": 1955,
+    "Antal": 124,
+    "Författare": "Juan Rulfo",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Masnavi",
+    "Serienummer": 1236,
+    "Antal": 438,
+    "Författare": "Rumi",
+    "Ledig": false
+  },
+  {
+    "Titel": "Midnight's Children",
+    "Serienummer": 1981,
+    "Antal": 536,
+    "Författare": "Salman Rushdie",
+    "Ledig": false
+  },
+  {
+    "Titel": "Bostan",
+    "Serienummer": 1257,
+    "Antal": 298,
+    "Författare": "Saadi",
+    "Ledig": false
+  },
+  {
+    "Titel": "Season of Migration to the North",
+    "Serienummer": 1966,
+    "Antal": 139,
+    "Författare": "Tayeb Salih",
+    "Ledig": false
+  },
+  {
+    "Titel": "Blindness",
+    "Serienummer": 1995,
+    "Antal": 352,
+    "Författare": "José Saramago",
+    "Ledig": false
+  },
+  {
+    "Titel": "Hamlet",
+    "Serienummer": 1603,
+    "Antal": 432,
+    "Författare": "William Shakespeare",
+    "Ledig": false
+  },
+  {
+    "Titel": "King Lear",
+    "Serienummer": 1608,
+    "Antal": 384,
+    "Författare": "William Shakespeare",
+    "Ledig": false
+  },
+  {
+    "Titel": "Othello",
+    "Serienummer": 1609,
+    "Antal": 314,
+    "Författare": "William Shakespeare",
+    "Ledig": false
+  },
+  {
+    "Titel": "Oedipus the King",
+    "Serienummer": -430,
+    "Antal": 88,
+    "Författare": "Sophocles",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Red and the Black",
+    "Serienummer": 1830,
+    "Antal": 576,
+    "Författare": "Stendhal",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Life And Opinions of Tristram Shandy",
+    "Serienummer": 1760,
+    "Antal": 640,
+    "Författare": "Laurence Sterne",
+    "Ledig": false
+  },
+  {
+    "Titel": "Confessions of Zeno",
+    "Serienummer": 1923,
+    "Antal": 412,
+    "Författare": "Italo Svevo",
+    "Ledig": false
+  },
+  {
+    "Titel": "Gulliver's Travels",
+    "Serienummer": 1726,
+    "Antal": 178,
+    "Författare": "Jonathan Swift",
+    "Ledig": false
+  },
+  {
+    "Titel": "War and Peace",
+    "Serienummer": 1867,
+    "Antal": 1296,
+    "Författare": "Leo Tolstoy",
+    "Ledig": false
+  },
+  {
+    "Titel": "Anna Karenina",
+    "Serienummer": 1877,
+    "Antal": 864,
+    "Författare": "Leo Tolstoy",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Death of Ivan Ilyich",
+    "Serienummer": 1886,
+    "Antal": 92,
+    "Författare": "Leo Tolstoy",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Adventures of Huckleberry Finn",
+    "Serienummer": 1884,
+    "Antal": 224,
+    "Författare": "Mark Twain",
+    "Ledig": false
+  },
+  {
+    "Titel": "Ramayana",
+    "Serienummer": -450,
+    "Antal": 152,
+    "Författare": "Valmiki",
+    "Ledig": false
+  },
+  {
+    "Titel": "The Aeneid",
+    "Serienummer": -23,
+    "Antal": 442,
+    "Författare": "Virgil",
+    "Ledig": false
+  },
+  {
+    "Titel": "Mahabharata",
+    "Serienummer": -700,
+    "Antal": 276,
+    "Författare": "Vyasa",
+    "Ledig": false
+  },
+  {
+    "Titel": "Leaves of Grass",
+    "Serienummer": 1855,
+    "Antal": 152,
+    "Författare": "Walt Whitman",
+    "Ledig": false
+  },
+  {
+    "Titel": "Mrs Dalloway",
+    "Serienummer": 1925,
+    "Antal": 216,
+    "Författare": "Virginia Woolf",
+    "Ledig": false
+  },
+  {
+    "Titel": "To the Lighthouse",
+    "Serienummer": 1927,
+    "Antal": 209,
+    "Författare": "Virginia Woolf",
+    "Ledig": false
+  },
+  {
+    "Titel": "Memoirs of Hadrian",
+    "Serienummer": 1951,
+    "Antal": 408,
+    "Författare": "Marguerite Yourcenar",
+    "Ledig": false
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "RentedBooks": [
+    ],
+    "förnamn": "",
+    "efternamn": "",
+    "id": null,
+    "personnummer": 123,
+    "lösenord": 123
+  },
+  {
+    "RentedBooks": [
+    ],
+    "förnamn": "",
+    "efternamn": "",
+    "id": null,
+    "personnummer": 12,
+    "lösenord": 2
+  }
+]
