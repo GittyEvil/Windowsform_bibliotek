@@ -58,7 +58,7 @@ namespace WinFormsApp1
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.listofbooks = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -319,22 +319,12 @@ namespace WinFormsApp1
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.listofbooks);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(701, 337);
             this.panel5.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(288, 71);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(130, 15);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "ska bli alla böcker i lista";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -344,17 +334,18 @@ namespace WinFormsApp1
             this.label10.Size = new System.Drawing.Size(64, 15);
             this.label10.TabIndex = 0;
             this.label10.Text = "alla böcker";
+            
             // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FirstPage";
             this.Text = "Form1";
@@ -399,7 +390,7 @@ namespace WinFormsApp1
         private Button button1;
         private Label label9;
         private Panel panel5;
-        private Label label11;
+        private Label listofbooks;
         private Label label10;
     }
 }

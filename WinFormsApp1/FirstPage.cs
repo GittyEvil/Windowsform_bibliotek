@@ -21,6 +21,7 @@ namespace WinFormsApp1
             InitializeComponent();
             button3.Click += (sender, e) => button3_Click(sender, e, UserList, BookList);
             button4.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting);
+            button1.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting);
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -94,14 +95,22 @@ namespace WinFormsApp1
 
         private void label11_Click(object sender, EventArgs e)
         {
-            //denna label kommer visa alla böcker som man sedan kan låna
-
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e, List<Book> BookList, List<Person> UserList, bool UserisRenting)
         {
             //lista alla böcker knappen(mainpage)
             panel5.BringToFront();
+            //denna knappen kommer göra alla böcker synliga 
+            for (var i = 0; i < BookList.Count; i++)
+            {
+                Book book = BookList[i];
+                var books = $"{i + 1}.{book.Titel} {book.Författare} {book.Serienummer} {book.Antal}";
+                listofbooks.Text = books;
+            }
+            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -118,5 +127,13 @@ namespace WinFormsApp1
         {
             //logga ut knapp(mainpage)
         }
+
+        private void FirstPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
     }
 }
