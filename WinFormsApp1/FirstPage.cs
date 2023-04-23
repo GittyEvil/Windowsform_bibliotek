@@ -21,7 +21,7 @@ namespace WinFormsApp1
             InitializeComponent();
             button3.Click += (sender, e) => button3_Click(sender, e, UserList, BookList);
             button4.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting);
-            button1.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting);
+            button1.Click += (sender, e) => button1_Click(sender, e, BookList, UserList, UserisRenting);
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -107,10 +107,10 @@ namespace WinFormsApp1
             {
                 Book book = BookList[i];
                 var books = $"{i + 1}.{book.Titel} {book.Författare} {book.Serienummer} {book.Antal}";
-                listofbooks.Text = books;
+                //listofbooks.Text = books;
+                ListofBooksbox.Items.Add(books);
             }
             
-
         }
 
         private void button2_Click(object sender, EventArgs e)

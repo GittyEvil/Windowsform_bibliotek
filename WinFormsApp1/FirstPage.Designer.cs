@@ -60,6 +60,7 @@ namespace WinFormsApp1
             this.panel5 = new System.Windows.Forms.Panel();
             this.listofbooks = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.ListofBooksbox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -296,7 +297,6 @@ namespace WinFormsApp1
             this.button1.TabIndex = 2;
             this.button1.Text = "Lista bok";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -319,12 +319,20 @@ namespace WinFormsApp1
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.ListofBooksbox);
             this.panel5.Controls.Add(this.listofbooks);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(701, 337);
             this.panel5.TabIndex = 2;
+            // 
+            // listofbooks
+            // 
+            this.listofbooks.Location = new System.Drawing.Point(304, 182);
+            this.listofbooks.Name = "listofbooks";
+            this.listofbooks.Size = new System.Drawing.Size(100, 23);
+            this.listofbooks.TabIndex = 0;
             // 
             // label10
             // 
@@ -334,18 +342,26 @@ namespace WinFormsApp1
             this.label10.Size = new System.Drawing.Size(64, 15);
             this.label10.TabIndex = 0;
             this.label10.Text = "alla böcker";
-            
+            // 
+            // ListofBooksbox
+            // 
+            this.ListofBooksbox.FormattingEnabled = true;
+            this.ListofBooksbox.ItemHeight = 15;
+            this.ListofBooksbox.Location = new System.Drawing.Point(66, 66);
+            this.ListofBooksbox.Name = "ListofBooksbox";
+            this.ListofBooksbox.Size = new System.Drawing.Size(588, 124);
+            this.ListofBooksbox.TabIndex = 1;
             // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FirstPage";
             this.Text = "Form1";
@@ -392,5 +408,6 @@ namespace WinFormsApp1
         private Panel panel5;
         private Label listofbooks;
         private Label label10;
+        private ListBox ListofBooksbox;
     }
 }

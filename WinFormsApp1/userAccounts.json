@@ -16,5 +16,14 @@
     "id": null,
     "personnummer": 12,
     "lösenord": 2
+  },
+  {
+    "RentedBooks": [
+    ],
+    "förnamn": "",
+    "efternamn": "",
+    "id": null,
+    "personnummer": 233,
+    "lösenord": 33
   }
 ]
