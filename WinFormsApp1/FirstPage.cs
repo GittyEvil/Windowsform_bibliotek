@@ -13,9 +13,9 @@ namespace WinFormsApp1
         
         public FirstPage()
         {
-            string Data = File.ReadAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json");
+            string Data = File.ReadAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json");
             List<Person> UserList = JsonConvert.DeserializeObject<List<Person>>(Data)!;
-            string BookData = File.ReadAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json");
+            string BookData = File.ReadAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json");
             List<Book> BookList = JsonConvert.DeserializeObject<List<Book>>(BookData)!;
             bool UserisRenting = false;
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace WinFormsApp1
             UserList.Add(newUser);
 
             string dataToSave = JsonConvert.SerializeObject(UserList);
-            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", dataToSave);
 
             panel1.BringToFront();
 
@@ -133,7 +133,15 @@ namespace WinFormsApp1
 
         }
 
-        
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //knappen som tar dig vidare för att låna bok och lämna tillbaka
+            panel6.BringToFront();
+        }
 
+        private void Choosebook_TextChanged(object sender, EventArgs e)
+        {
+            //skriver in vad du valt för bok som du ska låna
+        }
     }
 }
