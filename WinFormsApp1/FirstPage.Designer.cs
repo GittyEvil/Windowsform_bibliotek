@@ -350,7 +350,6 @@ namespace WinFormsApp1
             this.button7.TabIndex = 3;
             this.button7.Text = "Gå vidare";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Choosebook
             // 
@@ -358,7 +357,6 @@ namespace WinFormsApp1
             this.Choosebook.Name = "Choosebook";
             this.Choosebook.Size = new System.Drawing.Size(125, 27);
             this.Choosebook.TabIndex = 2;
-            this.Choosebook.TextChanged += new System.EventHandler(this.Choosebook_TextChanged);
             // 
             // ListofBooksbox
             // 
@@ -417,7 +415,7 @@ namespace WinFormsApp1
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(341, 88);
+            this.label12.Location = new System.Drawing.Point(318, 88);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(112, 20);
             this.label12.TabIndex = 0;
