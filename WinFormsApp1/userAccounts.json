@@ -1,7 +1,6 @@
 [
   {
-    "RentedBooks": [
-    ],
+    "RentedBooks": [],
     "förnamn": "",
     "efternamn": "",
     "id": null,
@@ -9,8 +8,7 @@
     "lösenord": 123
   },
   {
-    "RentedBooks": [
-    ],
+    "RentedBooks": [],
     "förnamn": "",
     "efternamn": "",
     "id": null,
@@ -18,8 +16,7 @@
     "lösenord": 2
   },
   {
-    "RentedBooks": [
-    ],
+    "RentedBooks": [],
     "förnamn": "",
     "efternamn": "",
     "id": null,

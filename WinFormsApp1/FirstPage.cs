@@ -11,23 +11,24 @@ namespace WinFormsApp1
 
     public partial class FirstPage : Form
     {
-        
+        Person User = null;
+        bool UserisRenting = false;
+        Book book = null;
+
         public FirstPage()
         {
             string Data = File.ReadAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json");
             List<Person> UserList = JsonConvert.DeserializeObject<List<Person>>(Data)!;
             string BookData = File.ReadAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json");
             List<Book> BookList = JsonConvert.DeserializeObject<List<Book>>(BookData)!;
-            bool UserisRenting = false;
-            Person User = null;
-            Book chosenbook = null;
+
             InitializeComponent();
             button3.Click += (sender, e) => button3_Click(sender, e, UserList, BookList);
             button4.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting);
-            button1.Click += (sender, e) => button1_Click(sender, e, BookList, UserList, UserisRenting);
-            button7.Click += (sender, e) => button7_Click(sender, e, BookList, UserList, UserisRenting);
-            button8.Click += (sender, e) => button8_Click(sender, e, User,chosenbook,BookList, UserList, UserisRenting);
-            button9.Click += (sender, e) => button9_Click(sender, e, User, chosenbook, BookList, UserList, UserisRenting);
+            button1.Click += (sender, e) => button1_Click(sender, e, BookList, UserList, UserisRenting, User);
+            button7.Click += (sender, e) => button7_Click(sender, e, BookList, UserList, UserisRenting, User);
+            button8.Click += (sender, e) => button8_Click(sender, e, User,BookList, UserList, UserisRenting);
+            button9.Click += (sender, e) => button9_Click(sender, e, User, BookList, UserList, UserisRenting);
             //label12.Click += (sender, e) => label12_Click(sender, e, BookList, UserList, UserisRenting, User, chosenbook);
         }
 
@@ -71,7 +72,6 @@ namespace WinFormsApp1
         {
             //kanpp för att inlogg
             //behöver ta input som skrevs och jämföra med det konto som redan existerar
-            Person User = null;
             var number = nummerLoginBox.Text;
             var password = passwordLoginButton.Text;
             foreach (Person user in UserList)
@@ -105,7 +105,7 @@ namespace WinFormsApp1
             
         }
 
-        private void button1_Click(object sender, EventArgs e, List<Book> BookList, List<Person> UserList, bool UserisRenting)
+        private void button1_Click(object sender, EventArgs e, List<Book> BookList, List<Person> UserList, bool UserisRenting, Person User)
         {
             //lista alla böcker knappen(mainpage)
             panel5.BringToFront();
@@ -140,7 +140,7 @@ namespace WinFormsApp1
 
         }
 
-        private void button7_Click(object sender, EventArgs e, List<Book> BookList, List<Person> UserList, bool UserisRenting)
+        private void button7_Click(object sender, EventArgs e, List<Book> BookList, List<Person> UserList, bool UserisRenting, Person User)
         {
             //knappen som tar dig vidare för att låna bok och lämna tillbaka
             var choice = Choosebook.Text;
@@ -150,11 +150,11 @@ namespace WinFormsApp1
 
             if (isNumber && number > 0 && number < BookList.Count + 1)
             {
-                Book book = BookList[number - 1];
+                book = BookList[number - 1];
                 var books = $"{book.Titel} {book.Författare} {book.Serienummer} {book.Antal}";
                 label12.Text = books;
                 panel6.BringToFront();
-                
+
                 
             }
 
@@ -166,15 +166,15 @@ namespace WinFormsApp1
             
         }
 
-        private void button8_Click(object sender, EventArgs e,Person User, Book book, List<Book> BookList, List<Person> UserList, bool UserisRenting)
+        private void button8_Click(object sender, EventArgs e,Person User, List<Book> BookList, List<Person> UserList, bool UserisRenting)
         {
             //knappen för att låna bok
 
             if (User.RentedBooks != null)
             {
-                foreach (Book Book in User.RentedBooks)
+                foreach (Book book in User.RentedBooks)
                 {
-                    if (Book.Serienummer == book.Serienummer)
+                    if (book.Serienummer == book.Serienummer)
                     {
                         UserisRenting = true;
                         break;
@@ -191,7 +191,7 @@ namespace WinFormsApp1
 
                 loggedInUser.RentedBooks.Add(rentedBook);
 
-                string data = @"C:\Users\adria\Documents\Bibliotektemp\Bibliotektemp\userAccounts.json";
+                string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
                 string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
                 File.WriteAllText(data, json);
@@ -202,20 +202,20 @@ namespace WinFormsApp1
         public static void UpdateJson(List<Person> UserList, List<Book> BookList)
         {
             string jsonString = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotektemp\Bibliotektemp\userAccounts.json", jsonString);
+            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json", jsonString);
 
             jsonString = JsonConvert.SerializeObject(BookList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotektemp\Bibliotektemp\Books.json", jsonString);
+            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json", jsonString);
         }
 
-        private void button9_Click(object sender, EventArgs e, Person User, Book book, List<Book> BookList, List<Person> UserList, bool UserisRenting)
+        private void button9_Click(object sender, EventArgs e, Person User,List<Book> BookList, List<Person> UserList, bool UserisRenting)
         {
             //knappen för att lämna tillbaka bok
             if (User.RentedBooks != null)
             {
-                foreach (Book Book in User.RentedBooks)
+                foreach (Book book in User.RentedBooks)
                 {
-                    if (Book.Serienummer == book.Serienummer)
+                    if (book.Serienummer == book.Serienummer)
                     {
                         UserisRenting = true;
                         break;
