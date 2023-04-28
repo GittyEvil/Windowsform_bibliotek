@@ -5,7 +5,7 @@
     "efternamn": "",
     "id": null,
     "personnummer": 123,
-    "lösenord": 123
+    "lösenord": 2
   },
   {
     "RentedBooks": [],
@@ -13,7 +13,7 @@
     "efternamn": "",
     "id": null,
     "personnummer": 12,
-    "lösenord": 2
+    "lösenord": 123
   },
   {
     "RentedBooks": [],

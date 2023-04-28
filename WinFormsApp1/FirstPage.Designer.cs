@@ -51,6 +51,11 @@ namespace WinFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -65,6 +70,7 @@ namespace WinFormsApp1
             this.listofbooks = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,6 +78,7 @@ namespace WinFormsApp1
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
@@ -257,6 +264,52 @@ namespace WinFormsApp1
             this.panel4.Size = new System.Drawing.Size(801, 453);
             this.panel4.TabIndex = 2;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.button10);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(801, 453);
+            this.panel7.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(323, 215);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(336, 274);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(94, 29);
+            this.button10.TabIndex = 2;
+            this.button10.Text = "byt lösenord";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(300, 166);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(170, 20);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "skriv in ditt nya lösenord";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(315, 107);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(153, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Ändra kontouppgifter";
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(357, 249);
@@ -386,6 +439,7 @@ namespace WinFormsApp1
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label13);
             this.panel6.Controls.Add(this.button9);
             this.panel6.Controls.Add(this.button8);
             this.panel6.Controls.Add(this.label12);
@@ -393,6 +447,16 @@ namespace WinFormsApp1
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(798, 453);
             this.panel6.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(346, 278);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "label13";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // button9
             // 
@@ -429,9 +493,10 @@ namespace WinFormsApp1
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel4);
             this.Name = "FirstPage";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -441,6 +506,8 @@ namespace WinFormsApp1
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -487,5 +554,11 @@ namespace WinFormsApp1
         private Button button9;
         private Button button8;
         private Label label12;
+        private Label label13;
+        private Panel panel7;
+        private Label label14;
+        private TextBox textBox1;
+        private Button button10;
+        private Label label15;
     }
 }

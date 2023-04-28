@@ -29,6 +29,7 @@ namespace WinFormsApp1
             button7.Click += (sender, e) => button7_Click(sender, e, BookList, UserList, UserisRenting, User);
             button8.Click += (sender, e) => button8_Click(sender, e, User,BookList, UserList, UserisRenting);
             button9.Click += (sender, e) => button9_Click(sender, e, User, BookList, UserList, UserisRenting);
+            button10.Click += (sender, e) => button10_Click(sender, e,UserList);
             //label12.Click += (sender, e) => label12_Click(sender, e, BookList, UserList, UserisRenting, User, chosenbook);
         }
 
@@ -128,6 +129,7 @@ namespace WinFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             //ändra konto uppgifter(mainpage)
+            panel7.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -196,7 +198,9 @@ namespace WinFormsApp1
 
                 File.WriteAllText(data, json);
 
-                Console.WriteLine($"Du har lånat boken '{book.Titel}'. Glöm inte att lämna tillbaka den senast om tre veckor.");
+                string line = $"Du har lånat boken '{book.Titel}'. Glöm inte att lämna tillbaka den senast om tre veckor.";
+                label13.Text = line;
+                panel3.BringToFront();
             }
         }
         public static void UpdateJson(List<Person> UserList, List<Book> BookList)
@@ -227,7 +231,8 @@ namespace WinFormsApp1
                 if (rentedBook.Serienummer == book.Serienummer)
                 {
                     User.RentedBooks.Remove(rentedBook);
-                    Console.WriteLine("Boken är nu återlämnad.");
+                    string line ="Boken är nu återlämnad.";
+                    label13.Text = line;
                     book.Ledig = true;
                     //firstordefault letar efter den inloggade användaren i UserList för att sedan ta bort dess bok som den lånade
                     Person updatedUser = UserList.FirstOrDefault(u => u.personnummer == User.personnummer)!;
@@ -235,11 +240,43 @@ namespace WinFormsApp1
                     {
                         updatedUser.RentedBooks = User.RentedBooks;
                         UpdateJson(UserList, BookList);
+                        panel3.BringToFront();
                         return;
                     }
                 }
             }
-            Console.WriteLine("Kunde inte hitta boken i användarens hyrda böcker.");
+            string line2 = "Kunde inte hitta boken i användarens hyrda böcker.";
+            label13.Text = line2;
+            panel3.BringToFront();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e, List<Person> UserList)
+        {
+            //denna knapp byter lösenord
+            Console.WriteLine("Skriv in ditt nya lösenord du skulle vilja ha, endast siffror");
+            int newPassword = Int32.Parse(textBox1.Text);
+
+            //hittar användaren i userlistan(den som är inloggad)
+            Person loggedInUser = UserList.FirstOrDefault(u => u.lösenord == User.lösenord)!;
+
+            //ger nytt lösenord till användaren som hittats
+            loggedInUser.lösenord = newPassword;
+
+            string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
+            string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
+
+            File.WriteAllText(data, json);
+            panel3.BringToFront();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //textbox1 är boxen där man skriver input för att byta lösenord
         }
     }
 }
