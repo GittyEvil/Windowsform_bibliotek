@@ -1,26 +1,49 @@
 [
   {
-    "RentedBooks": [],
+    "RentedBooks": [
+      {
+        "Titel": "Things Fall Apart",
+        "Serienummer": 1958,
+        "Antal": 209,
+        "Författare": "Chinua",
+        "Ledig": false
+      }
+    ],
     "förnamn": "",
     "efternamn": "",
     "id": null,
     "personnummer": 123,
-    "lösenord": 2
+    "lösenord": 123,
+    "bibliotikarie": false
   },
   {
-    "RentedBooks": [],
+    "RentedBooks": [
+    ],
     "förnamn": "",
     "efternamn": "",
     "id": null,
     "personnummer": 12,
-    "lösenord": 123
+    "lösenord": 123,
+    "bibliotikarie": true
   },
   {
-    "RentedBooks": [],
+    "RentedBooks": [
+    ],
     "förnamn": "",
     "efternamn": "",
     "id": null,
     "personnummer": 233,
-    "lösenord": 33
+    "lösenord": 33,
+    "bibliotikarie": false
+  },
+  {
+    "RentedBooks": [
+    ],
+    "förnamn": "",
+    "efternamn": "",
+    "id": null,
+    "personnummer": 1234,
+    "lösenord": 1234,
+    "bibliotikarie": false
   }
 ]

@@ -44,5 +44,6 @@ namespace Bibliotektemp
             Författare = författare;
             Antal = antal;
         }
+        
     }
 }

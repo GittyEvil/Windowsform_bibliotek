@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bibliotektemp
 {
@@ -13,8 +14,10 @@ namespace Bibliotektemp
             public string? id { get; set; }
             public int? personnummer { get; set; }
             public int? lösenord { get; set; }
+            public bool? bibliotikarie { get; set; }
 
             public List<Book> RentedBooks = new List<Book>();
+
             public Person()
             {
                 
@@ -26,12 +29,13 @@ namespace Bibliotektemp
                 
             }
 
-            public Person(string förnamn, string efternamn, int personnummer, int lösenord) 
+            public Person(string förnamn, string efternamn, int personnummer, int lösenord, bool bibliotikarie =false) 
             {
                 this.förnamn = förnamn;
                 this.efternamn = efternamn;
                 this.personnummer = personnummer;
                 this.lösenord = lösenord;
+                this.bibliotikarie = bibliotikarie;
             }
 
             public Person(int personnummer, int lösenord)
@@ -39,6 +43,10 @@ namespace Bibliotektemp
                 this.personnummer = personnummer;
                 this.lösenord = lösenord;
             }
-        
+            public Person(bool bibliotikarie)
+            {
+                this.bibliotikarie = bibliotikarie;
+            }
+
     }
 }

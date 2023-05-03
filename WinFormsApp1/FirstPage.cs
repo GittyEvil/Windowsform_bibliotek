@@ -14,6 +14,7 @@ namespace WinFormsApp1
         Person User = null;
         bool UserisRenting = false;
         Book book = null;
+        bool bibliotikarie = false;
 
         public FirstPage()
         {
@@ -24,13 +25,12 @@ namespace WinFormsApp1
 
             InitializeComponent();
             button3.Click += (sender, e) => button3_Click(sender, e, UserList, BookList);
-            button4.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting);
+            button4.Click += (sender, e) => button4_Click(sender, e, UserList, BookList, UserisRenting, bibliotikarie);
             button1.Click += (sender, e) => button1_Click(sender, e, BookList, UserList, UserisRenting, User);
             button7.Click += (sender, e) => button7_Click(sender, e, BookList, UserList, UserisRenting, User);
             button8.Click += (sender, e) => button8_Click(sender, e, User,BookList, UserList, UserisRenting);
             button9.Click += (sender, e) => button9_Click(sender, e, User, BookList, UserList, UserisRenting);
             button10.Click += (sender, e) => button10_Click(sender, e,UserList);
-            //label12.Click += (sender, e) => label12_Click(sender, e, BookList, UserList, UserisRenting, User, chosenbook);
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace WinFormsApp1
 
         
 
-        public void button4_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList, bool UserisRenting)
+        public void button4_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList, bool UserisRenting, bool bibliotikarie)
         {
             //kanpp för att registrera
             UserList ??= new List<Person>();
@@ -57,7 +57,7 @@ namespace WinFormsApp1
             string lösenord1 = passwordRegisterButton.Text;
             Console.WriteLine("du har nu skapat ett konto.");
 
-            Person newUser = new("", "", Int32.Parse(personnummer1!), Int32.Parse(lösenord1!));
+            Person newUser = new("", "", Int32.Parse(personnummer1!), Int32.Parse(lösenord1!) ,bibliotikarie);
 
 
             UserList.Add(newUser);
@@ -79,12 +79,21 @@ namespace WinFormsApp1
             {
                 var personnummer = user.personnummer;
                 var password1 = user.lösenord;
+                var bibliotikarie = user.bibliotikarie;
 
 
                 if (personnummer.ToString() == number && password == password1.ToString())
                 {
                     User = user;
-                    panel4.BringToFront();
+                    if(bibliotikarie == false)
+                    {
+                        panel4.BringToFront();
+                    }
+                    if (bibliotikarie == true)
+                    {
+                        panel8.BringToFront();
+                    }
+                    
                     return;
                 }
 
@@ -277,6 +286,21 @@ namespace WinFormsApp1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //textbox1 är boxen där man skriver input för att byta lösenord
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            //lägger till bok(bibliotikarie sida
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            //tar bort bok (bibliotikare sida
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            //visa alla användare
         }
     }
 }

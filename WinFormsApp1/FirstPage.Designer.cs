@@ -51,17 +51,17 @@ namespace WinFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -74,6 +74,16 @@ namespace WinFormsApp1
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,6 +91,7 @@ namespace WinFormsApp1
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -264,52 +275,6 @@ namespace WinFormsApp1
             this.panel4.Size = new System.Drawing.Size(801, 453);
             this.panel4.TabIndex = 2;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Controls.Add(this.button10);
-            this.panel7.Controls.Add(this.label15);
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(801, 453);
-            this.panel7.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(323, 215);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(336, 274);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(94, 29);
-            this.button10.TabIndex = 2;
-            this.button10.Text = "byt lösenord";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(300, 166);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(170, 20);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "skriv in ditt nya lösenord";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(315, 107);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(153, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Ändra kontouppgifter";
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(357, 249);
@@ -371,6 +336,52 @@ namespace WinFormsApp1
             this.label8.TabIndex = 0;
             this.label8.Text = "Bibliotek";
             this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.button10);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(801, 453);
+            this.panel7.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(323, 215);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(336, 274);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(94, 29);
+            this.button10.TabIndex = 2;
+            this.button10.Text = "byt lösenord";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(300, 166);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(170, 20);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "skriv in ditt nya lösenord";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(315, 107);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(153, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Ändra kontouppgifter";
             // 
             // panel5
             // 
@@ -485,6 +496,111 @@ namespace WinFormsApp1
             this.label12.TabIndex = 0;
             this.label12.Text = "ska bli vald bok";
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button17);
+            this.panel8.Controls.Add(this.button16);
+            this.panel8.Controls.Add(this.button15);
+            this.panel8.Controls.Add(this.button11);
+            this.panel8.Controls.Add(this.button12);
+            this.panel8.Controls.Add(this.button13);
+            this.panel8.Controls.Add(this.button14);
+            this.panel8.Controls.Add(this.label16);
+            this.panel8.Controls.Add(this.label17);
+            this.panel8.Location = new System.Drawing.Point(0, -1);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(801, 453);
+            this.panel8.TabIndex = 7;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(349, 275);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(94, 29);
+            this.button17.TabIndex = 8;
+            this.button17.Text = "ta bort bok";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(347, 244);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(94, 29);
+            this.button16.TabIndex = 7;
+            this.button16.Text = "lägga till bok";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(349, 209);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(94, 29);
+            this.button15.TabIndex = 6;
+            this.button15.Text = "visa användare";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(354, 350);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(86, 31);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "Logga ut";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(354, 311);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(86, 31);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "Konto ";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(355, 171);
+            this.button13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(86, 31);
+            this.button13.TabIndex = 3;
+            this.button13.Text = "Söka bok";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(355, 131);
+            this.button14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(86, 31);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "Lista bok";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(347, 95);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(112, 20);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "vad vill du göra";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(323, 53);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(155, 20);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Bibliotek, Bibliotikarie";
+            // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -497,6 +613,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel8);
             this.Name = "FirstPage";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -512,6 +629,8 @@ namespace WinFormsApp1
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -560,5 +679,15 @@ namespace WinFormsApp1
         private TextBox textBox1;
         private Button button10;
         private Label label15;
+        private Panel panel8;
+        private Button button11;
+        private Button button12;
+        private Button button13;
+        private Button button14;
+        private Label label16;
+        private Label label17;
+        private Button button17;
+        private Button button16;
+        private Button button15;
     }
 }
