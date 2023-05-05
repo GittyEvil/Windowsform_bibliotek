@@ -14,6 +14,7 @@ namespace WinFormsApp1
         Person User = null;
         bool UserisRenting = false;
         Book book = null;
+        Person chosenUser = null;
         bool bibliotikarie = false;
 
         public FirstPage()
@@ -31,6 +32,9 @@ namespace WinFormsApp1
             button8.Click += (sender, e) => button8_Click(sender, e, User,BookList, UserList, UserisRenting);
             button9.Click += (sender, e) => button9_Click(sender, e, User, BookList, UserList, UserisRenting);
             button10.Click += (sender, e) => button10_Click(sender, e,UserList);
+            button15.Click += (sender, e) => button15_Click(sender, e, UserList);
+            button18.Click += (sender, e) => button18_Click(sender, e, UserList);
+            button20.Click += (sender, e) => button15_Click(sender, e, UserList);
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -298,9 +302,61 @@ namespace WinFormsApp1
             //tar bort bok (bibliotikare sida
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void button15_Click(object sender, EventArgs e,List<Person> UserList)
         {
             //visa alla användare
+            panel9.BringToFront();
+
+            for(var i = 0; i < UserList.Count; i++)
+            {
+                Person person = UserList[i];
+                var users = $"{i + 1}. förnamn:{person.förnamn}   Efternamn:{person.efternamn}   Personnummer:{person.personnummer}   Lösenord:{person.lösenord}";
+                //listofbooks.Text = books;
+                listBox1.Items.Add(users);
+            }
+            
+        }
+
+        private void button18_Click(object sender, EventArgs e, List<Person> UserList)
+        {
+            var choice = textBox3.Text;
+            int number;
+
+            var isNumber = int.TryParse(choice, out number);
+
+            if (isNumber && number > 0 && number < UserList.Count + 1)
+            {
+                chosenUser = UserList[number - 1];
+                var users = $"förnamn:{chosenUser.förnamn}   Efternamn:{chosenUser.efternamn}   Personnummer:{chosenUser.personnummer}   Lösenord:{chosenUser.lösenord}";
+                label19.Text = users;
+                panel10.BringToFront();
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //tar bort en användare som är vald från listan
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //listBox1 är boxen som ska visa alla användare
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //textboxen(input) som man väljer vilken användare man vill redigera
+        }
+
+        private void button20_Click(object sender, EventArgs e, List<Person> UserList)
+        {
+            //knappen som redigerar vald användare
+            
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            //väljer användare för att redigera ëller ta bort
         }
     }
 }
