@@ -698,5 +698,12 @@
     "Antal": 408,
     "Författare": "Marguerite Yourcenar",
     "Ledig": false
+  },
+  {
+    "Titel": "Olles äventyr",
+    "Serienummer": 12,
+    "Antal": 12345,
+    "Författare": "Adam skogren",
+    "Ledig": true
   }
 ]

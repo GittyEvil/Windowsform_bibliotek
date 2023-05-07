@@ -19,9 +19,9 @@ namespace WinFormsApp1
 
         public FirstPage()
         {
-            string Data = File.ReadAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json");
+            string Data = File.ReadAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json");
             List<Person> UserList = JsonConvert.DeserializeObject<List<Person>>(Data)!;
-            string BookData = File.ReadAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json");
+            string BookData = File.ReadAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json");
             List<Book> BookList = JsonConvert.DeserializeObject<List<Book>>(BookData)!;
 
             InitializeComponent();
@@ -34,7 +34,10 @@ namespace WinFormsApp1
             button10.Click += (sender, e) => button10_Click(sender, e,UserList);
             button15.Click += (sender, e) => button15_Click(sender, e, UserList);
             button18.Click += (sender, e) => button18_Click(sender, e, UserList);
-            button20.Click += (sender, e) => button15_Click(sender, e, UserList);
+            button20.Click += (sender, e) => button20_Click(sender, e, UserList);
+            button21.Click += (sender, e) => button21_Click(sender, e, BookList);
+            button19.Click += (sender, e) => button19_Click(sender, e, UserList);
+            button22.Click += (sender, e) => button22_Click(sender, e, UserList);
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace WinFormsApp1
             UserList.Add(newUser);
 
             string dataToSave = JsonConvert.SerializeObject(UserList);
-            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", dataToSave);
 
             panel1.BringToFront();
 
@@ -206,7 +209,7 @@ namespace WinFormsApp1
 
                 loggedInUser.RentedBooks.Add(rentedBook);
 
-                string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
+                string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
                 string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
                 File.WriteAllText(data, json);
@@ -219,10 +222,10 @@ namespace WinFormsApp1
         public static void UpdateJson(List<Person> UserList, List<Book> BookList)
         {
             string jsonString = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json", jsonString);
+            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json", jsonString);
 
             jsonString = JsonConvert.SerializeObject(BookList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json", jsonString);
+            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json", jsonString);
         }
 
         private void button9_Click(object sender, EventArgs e, Person User,List<Book> BookList, List<Person> UserList, bool UserisRenting)
@@ -280,7 +283,7 @@ namespace WinFormsApp1
             //ger nytt lösenord till användaren som hittats
             loggedInUser.lösenord = newPassword;
 
-            string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
+            string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
             string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
             File.WriteAllText(data, json);
@@ -295,6 +298,7 @@ namespace WinFormsApp1
         private void button16_Click(object sender, EventArgs e)
         {
             //lägger till bok(bibliotikarie sida
+            panel11.BringToFront();
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -333,30 +337,85 @@ namespace WinFormsApp1
             }
         }
 
-        private void button19_Click(object sender, EventArgs e)
-        {
-            //tar bort en användare som är vald från listan
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //listBox1 är boxen som ska visa alla användare
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            //textboxen(input) som man väljer vilken användare man vill redigera
-        }
 
         private void button20_Click(object sender, EventArgs e, List<Person> UserList)
         {
             //knappen som redigerar vald användare
+            int newPassword = Int32.Parse(textBox2.Text);
+
+            //hittar användaren i userlistan(den som är inloggad)
+            Person changeUser = UserList.FirstOrDefault(u => u.lösenord == chosenUser.lösenord)!;
+
+            //ger nytt lösenord till användaren som hittats
+            changeUser.lösenord = newPassword;
+
+            string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
+            string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
+
+            File.WriteAllText(data, json);
+            panel3.BringToFront();
+        }
+
+
+        private void button21_Click(object sender, EventArgs e,List<Book> BookList)
+        {
+            //knappen som lägger till böcker i json fil
+            BookList ??= new List<Book>();
+            string titel = textBox4.Text;
+            int serienummer = Int32.Parse(textBox5.Text);
+            int antal = Int32.Parse(textBox6.Text);
+            string författare = textBox7.Text;
+
+            Book newBook = new(titel,serienummer,antal,författare);
+
+
+            BookList.Add(newBook);
+
+            string dataToSave = JsonConvert.SerializeObject(BookList);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\Books.json", dataToSave);
+
+            panel3.BringToFront();
+
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //input box för att ändra lösenord för en användare(bibliotikarie)
+        }
+
+        private void button19_Click(object sender, EventArgs e, List<Person> UserList)
+        {
+            //knappen öppnar prompt ifall du vill ta bort användare
+            panel12.BringToFront();
             
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            panel3.BringToFront();
+        }
+
+        private void button22_Click(object sender, EventArgs e, List<Person> UserList)
+        {
+            //knappen tar bort vald användare
+            Person changeUser = UserList.FirstOrDefault(u => u.lösenord == chosenUser.lösenord)!;
+
+            //ger nytt lösenord till användaren som hittats
+            UserList.Remove(changeUser);
+
+            string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
+            string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
+
+            File.WriteAllText(data, json);
+            panel3.BringToFront();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            //väljer användare för att redigera ëller ta bort
+
         }
+
+        
     }
 }
