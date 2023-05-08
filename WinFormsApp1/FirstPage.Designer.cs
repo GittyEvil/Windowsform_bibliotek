@@ -517,7 +517,6 @@ namespace WinFormsApp1
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 23);
             this.textBox3.TabIndex = 0;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button19
             // 
@@ -906,9 +905,9 @@ namespace WinFormsApp1
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel9);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FirstPage";
             this.Text = "Form1";

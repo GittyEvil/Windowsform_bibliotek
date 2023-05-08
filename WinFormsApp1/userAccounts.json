@@ -30,15 +30,6 @@
     "förnamn": "",
     "efternamn": "",
     "id": null,
-    "personnummer": 233,
-    "lösenord": 2,
-    "bibliotikarie": false
-  },
-  {
-    "RentedBooks": [],
-    "förnamn": "",
-    "efternamn": "",
-    "id": null,
     "personnummer": 1234,
     "lösenord": 1234,
     "bibliotikarie": false

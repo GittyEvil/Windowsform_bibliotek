@@ -14,7 +14,7 @@ namespace WinFormsApp1
         Person User = null;
         bool UserisRenting = false;
         Book book = null;
-        Person chosenUser = null;
+        private Person chosenUser = null;
         bool bibliotikarie = false;
 
         public FirstPage()
@@ -309,7 +309,7 @@ namespace WinFormsApp1
         private void button15_Click(object sender, EventArgs e,List<Person> UserList)
         {
             //visa alla användare
-            panel9.BringToFront();
+            
 
             for(var i = 0; i < UserList.Count; i++)
             {
@@ -317,6 +317,7 @@ namespace WinFormsApp1
                 var users = $"{i + 1}. förnamn:{person.förnamn}   Efternamn:{person.efternamn}   Personnummer:{person.personnummer}   Lösenord:{person.lösenord}";
                 //listofbooks.Text = books;
                 listBox1.Items.Add(users);
+                panel9.BringToFront();
             }
             
         }
@@ -399,23 +400,22 @@ namespace WinFormsApp1
         private void button22_Click(object sender, EventArgs e, List<Person> UserList)
         {
             //knappen tar bort vald användare
-            Person changeUser = UserList.FirstOrDefault(u => u.lösenord == chosenUser.lösenord)!;
+            var choice = textBox3.Text;
+            int number;
 
-            //ger nytt lösenord till användaren som hittats
-            UserList.Remove(changeUser);
+            var isNumber = int.TryParse(choice, out number);
 
-            string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
+            if (isNumber && number > 0 && number < UserList.Count + 1)
+            {
+                chosenUser = UserList[number - 1];
+                Person changeUser = UserList.FirstOrDefault(u => u.lösenord == chosenUser.lösenord)!;
+            }
+            
+            UserList.Remove(chosenUser);
             string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-
-            File.WriteAllText(data, json);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", json);
             panel3.BringToFront();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
