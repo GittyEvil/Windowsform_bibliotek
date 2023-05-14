@@ -13,7 +13,7 @@
     "efternamn": "",
     "id": null,
     "personnummer": 123,
-    "lösenord": 1,
+    "lösenord": 123,
     "bibliotikarie": false
   },
   {
@@ -24,14 +24,5 @@
     "personnummer": 12,
     "lösenord": 123,
     "bibliotikarie": true
-  },
-  {
-    "RentedBooks": [],
-    "förnamn": "",
-    "efternamn": "",
-    "id": null,
-    "personnummer": 1234,
-    "lösenord": 1234,
-    "bibliotikarie": false
   }
 ]
