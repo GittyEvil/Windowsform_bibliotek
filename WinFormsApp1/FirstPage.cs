@@ -8,7 +8,6 @@ using Microsoft.VisualBasic.ApplicationServices;
 namespace WinFormsApp1
 {
     
-
     public partial class FirstPage : Form
     {
         Person User = null;
@@ -40,6 +39,7 @@ namespace WinFormsApp1
             button22.Click += (sender, e) => button22_Click(sender, e, UserList);
             button14.Click += (sender, e) => button14_Click(sender, e, BookList);
             button12.Click += (sender, e) => button12_Click(sender, e, UserList);
+            button24.Click += (sender, e) => button24_Click(sender, e, UserList, BookList);
 
         }
 
@@ -68,7 +68,6 @@ namespace WinFormsApp1
             Console.WriteLine("du har nu skapat ett konto.");
 
             Person newUser = new("", "", Int32.Parse(personnummer1!), Int32.Parse(lösenord1!) ,bibliotikarie);
-
 
             UserList.Add(newUser);
 
@@ -435,6 +434,7 @@ namespace WinFormsApp1
         private void button13_Click(object sender, EventArgs e)
         {
             //söka bok
+            panel13.BringToFront();
         }
 
         
@@ -457,5 +457,20 @@ namespace WinFormsApp1
             File.WriteAllText(data, json);
             panel3.BringToFront();
         }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            //inputen för att söka bok
+        }
+
+        private void button24_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList)
+        {
+            //knappen som tar dig vidare för att låna bok
+            string searchQuery = textBox8.Text;
+            BookHandler.SearchForBook(BookList, UserList, searchQuery);
+
+            panel3.BringToFront();
+        }
+
     }
 }

@@ -50,6 +50,10 @@ namespace WinFormsApp1
             this.nummerRegisterButton = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button24 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
@@ -114,6 +118,7 @@ namespace WinFormsApp1
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -291,6 +296,42 @@ namespace WinFormsApp1
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(798, 453);
             this.panel3.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.textBox8);
+            this.panel13.Controls.Add(this.button24);
+            this.panel13.Controls.Add(this.label28);
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(798, 454);
+            this.panel13.TabIndex = 2;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(332, 189);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(125, 27);
+            this.textBox8.TabIndex = 2;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(346, 303);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(94, 29);
+            this.button24.TabIndex = 1;
+            this.button24.Text = "sök";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(150, 88);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(500, 20);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Vad vill du söka efter? Du kan söka med titel, författare eller seriernummer";
             // 
             // panel12
             // 
@@ -896,6 +937,7 @@ namespace WinFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -907,7 +949,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel13);
             this.Name = "FirstPage";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -915,6 +957,8 @@ namespace WinFormsApp1
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -1018,5 +1062,9 @@ namespace WinFormsApp1
         private Button button22;
         private Label label27;
         private Label label26;
+        private Panel panel13;
+        private Button button24;
+        private Label label28;
+        private TextBox textBox8;
     }
 }
