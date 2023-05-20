@@ -37,7 +37,7 @@ namespace Bibliotektemp
                 if (personnummer.ToString() == number && password == password1.ToString())
                 {
                     User = user;
-                    Program.MainPage(User, UserisRenting);
+                    
                     return;
                 }
 
@@ -69,31 +69,24 @@ namespace Bibliotektemp
 
         }
         //hanterar konto uppgift ändringar(lösenords ändring)
-        public static void UserInfoChanger(List<Person> UserList, Person User, List<Book> BookList)
+        public static void UserInfoChanger(List<Person> UserList, Person User, List<Book> BookList, int newPassword)
         {
-            bool UserisRenting = false;
-            Console.WriteLine("Skulle du vilja byta lösenord?, 1:Ja , 2:Nej");
-            string val = Console.ReadLine()!;
+            int newPassword1 = newPassword;
 
-            if(val=="1")
+            //hittar användaren i userlistan (den som är inloggad)
+            Person loggedInUser = UserList.FirstOrDefault(u => u.personnummer == User.personnummer);
+
+            if (loggedInUser != null)
             {
-                Console.WriteLine("Skriv in ditt nya lösenord du skulle vilja ha, endast siffror");
-                int newPassword = Int32.Parse(Console.ReadLine())!;
-   
-                //hittar användaren i userlistan(den som är inloggad)
-                Person loggedInUser = UserList.FirstOrDefault(u => u.lösenord == User.lösenord)!;
-
                 //ger nytt lösenord till användaren som hittats
-                loggedInUser.lösenord = newPassword;
+                loggedInUser.lösenord = newPassword1;
 
-                string data = @"C:\Users\adria\Documents\Bibliotektemp\Bibliotektemp\userAccounts.json";
+                string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
                 string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
                 File.WriteAllText(data, json);
-                
             }
-
-            Program.MainPage(User, UserisRenting);
+            
         }
 
     }

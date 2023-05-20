@@ -18,9 +18,9 @@ namespace WinFormsApp1
 
         public FirstPage()
         {
-            string Data = File.ReadAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json");
+            string Data = File.ReadAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json");
             List<Person> UserList = JsonConvert.DeserializeObject<List<Person>>(Data)!;
-            string BookData = File.ReadAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json");
+            string BookData = File.ReadAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json");
             List<Book> BookList = JsonConvert.DeserializeObject<List<Book>>(BookData)!;
 
             InitializeComponent();
@@ -30,16 +30,18 @@ namespace WinFormsApp1
             button7.Click += (sender, e) => button7_Click(sender, e, BookList, UserList, UserisRenting, User);
             button8.Click += (sender, e) => button8_Click(sender, e, User,BookList, UserList, UserisRenting);
             button9.Click += (sender, e) => button9_Click(sender, e, User, BookList, UserList, UserisRenting);
-            button10.Click += (sender, e) => button10_Click(sender, e,UserList);
+            button10.Click += (sender, e) => button10_Click(sender, e,UserList, BookList,User);
             button15.Click += (sender, e) => button15_Click(sender, e, UserList);
             button18.Click += (sender, e) => button18_Click(sender, e, UserList);
             button20.Click += (sender, e) => button20_Click(sender, e, UserList);
             button21.Click += (sender, e) => button21_Click(sender, e, BookList);
             button19.Click += (sender, e) => button19_Click(sender, e, UserList);
             button22.Click += (sender, e) => button22_Click(sender, e, UserList);
-            button14.Click += (sender, e) => button14_Click(sender, e, BookList);
-            button12.Click += (sender, e) => button12_Click(sender, e, UserList);
+            button12.Click += (sender, e) => button12_Click(sender, e, UserList, BookList);
+            button14.Click += (sender, e) => button14_Click(sender, e, UserList, BookList);
             button24.Click += (sender, e) => button24_Click(sender, e, UserList, BookList);
+            button2.Click += (sender, e) => button2_Click(sender, e, UserList, BookList);
+
 
         }
 
@@ -72,7 +74,7 @@ namespace WinFormsApp1
             UserList.Add(newUser);
 
             string dataToSave = JsonConvert.SerializeObject(UserList);
-            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", dataToSave);
 
             panel1.BringToFront();
 
@@ -82,6 +84,7 @@ namespace WinFormsApp1
         {
             //kanpp för att inlogg
             //behöver ta input som skrevs och jämföra med det konto som redan existerar
+            
             var number = nummerLoginBox.Text;
             var password = passwordLoginButton.Text;
             foreach (Person user in UserList)
@@ -139,10 +142,7 @@ namespace WinFormsApp1
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //söka efter bok knappen(mainpage)
-        }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -189,82 +189,27 @@ namespace WinFormsApp1
         private void button8_Click(object sender, EventArgs e,Person User, List<Book> BookList, List<Person> UserList, bool UserisRenting)
         {
             //knappen för att låna bok
-
-            if (User.RentedBooks != null)
-            {
-                foreach (Book book in User.RentedBooks)
-                {
-                    if (book.Serienummer == book.Serienummer)
-                    {
-                        UserisRenting = true;
-                        break;
-                    }
-                }
-            }
-            if (UserisRenting == false)
-            {
-                Person loggedInUser = UserList.FirstOrDefault(u => u.id == User.id)!;
-
-                Book rentedBook = new(book.Titel!, book.Serienummer, book.Författare, book.Antal);
-
-                book.Ledig = false;
-
-                loggedInUser.RentedBooks.Add(rentedBook);
-
-                string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
-                string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-
-                File.WriteAllText(data, json);
-
-                string line = $"Du har lånat boken '{book.Titel}'. Glöm inte att lämna tillbaka den senast om tre veckor.";
-                label13.Text = line;
-                panel3.BringToFront();
-            }
+            BookHandler.Handlebook.RentBook(book, User, BookList, UserList, UserisRenting);
+            //label13.Text = line;
+            panel3.BringToFront();
+            
         }
         public static void UpdateJson(List<Person> UserList, List<Book> BookList)
         {
             string jsonString = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json", jsonString);
+            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json", jsonString);
 
             jsonString = JsonConvert.SerializeObject(BookList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json", jsonString);
+            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json", jsonString);
         }
 
         private void button9_Click(object sender, EventArgs e, Person User,List<Book> BookList, List<Person> UserList, bool UserisRenting)
         {
             //knappen för att lämna tillbaka bok
-            if (User.RentedBooks != null)
-            {
-                foreach (Book book in User.RentedBooks)
-                {
-                    if (book.Serienummer == book.Serienummer)
-                    {
-                        UserisRenting = true;
-                        break;
-                    }
-                }
-            }
-            foreach (Book rentedBook in User.RentedBooks)
-            {
-                if (rentedBook.Serienummer == book.Serienummer)
-                {
-                    User.RentedBooks.Remove(rentedBook);
-                    string line ="Boken är nu återlämnad.";
-                    label13.Text = line;
-                    book.Ledig = true;
-                    //firstordefault letar efter den inloggade användaren i UserList för att sedan ta bort dess bok som den lånade
-                    Person updatedUser = UserList.FirstOrDefault(u => u.personnummer == User.personnummer)!;
-                    if (updatedUser != null)
-                    {
-                        updatedUser.RentedBooks = User.RentedBooks;
-                        UpdateJson(UserList, BookList);
-                        panel3.BringToFront();
-                        return;
-                    }
-                }
-            }
+            
             string line2 = "Kunde inte hitta boken i användarens hyrda böcker.";
             label13.Text = line2;
+            BookHandler.Handlebook.ReturnBooks(book, User, BookList, UserList, ref UserisRenting);
             panel3.BringToFront();
         }
 
@@ -273,22 +218,13 @@ namespace WinFormsApp1
 
         }
 
-        private void button10_Click(object sender, EventArgs e, List<Person> UserList)
+        private void button10_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList, Person User)
         {
             //denna knapp byter lösenord
-            Console.WriteLine("Skriv in ditt nya lösenord du skulle vilja ha, endast siffror");
+            
             int newPassword = Int32.Parse(textBox1.Text);
 
-            //hittar användaren i userlistan(den som är inloggad)
-            Person loggedInUser = UserList.FirstOrDefault(u => u.lösenord == User.lösenord)!;
-
-            //ger nytt lösenord till användaren som hittats
-            loggedInUser.lösenord = newPassword;
-
-            string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
-            string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-
-            File.WriteAllText(data, json);
+            AccountHandler.UserInfoChanger(UserList,User, BookList, newPassword);
             panel3.BringToFront();
         }
 
@@ -352,7 +288,7 @@ namespace WinFormsApp1
             //ger nytt lösenord till användaren som hittats
             changeUser.lösenord = newPassword;
 
-            string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
+            string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
             string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
             File.WriteAllText(data, json);
@@ -375,7 +311,7 @@ namespace WinFormsApp1
             BookList.Add(newBook);
 
             string dataToSave = JsonConvert.SerializeObject(BookList);
-            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\Books.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\Books.json", dataToSave);
 
             panel3.BringToFront();
         }
@@ -413,11 +349,32 @@ namespace WinFormsApp1
             
             UserList.Remove(chosenUser);
             string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", json);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", json);
             panel3.BringToFront();
         }
+        
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //söka bok
+            panel13.BringToFront();
+        }
 
-        private void button14_Click(object sender, EventArgs e, List<Book> BookList)
+        
+
+        private void button12_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList)
+        {
+            //ändra konto uppgifter
+            panel7.BringToFront();
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            //inputen för att söka bok
+        }
+
+        
+
+        private void button14_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList)
         {
             //lista bok
             panel5.BringToFront();
@@ -431,46 +388,21 @@ namespace WinFormsApp1
             }
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            //söka bok
-            panel13.BringToFront();
-        }
-
-        
-
-        private void button12_Click(object sender, EventArgs e, List<Person> UserList)
-        {
-            //ändra konto uppgifter
-            //knappen som redigerar vald användare
-            int newPassword = Int32.Parse(textBox2.Text);
-
-            //hittar användaren i userlistan(den som är inloggad)
-            Person changeUser = UserList.FirstOrDefault(u => u.lösenord == chosenUser.lösenord)!;
-
-            //ger nytt lösenord till användaren som hittats
-            changeUser.lösenord = newPassword;
-
-            string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
-            string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-
-            File.WriteAllText(data, json);
-            panel3.BringToFront();
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-            //inputen för att söka bok
-        }
-
         private void button24_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList)
         {
-            //knappen som tar dig vidare för att låna bok
+            //knappen som används för att söka upp bok, ska öppna panel6.BringtoFront();
+            //ska ta input för bok och lägga i vald bok
             string searchQuery = textBox8.Text;
-            BookHandler.SearchForBook(BookList, UserList, searchQuery);
-
-            panel3.BringToFront();
+            BookHandler.Handlebook.SearchForBook(BookList, UserList, UserisRenting, User, searchQuery, ref book);
+            if (book != null)
+            {
+                panel6.BringToFront();
+            }
         }
 
+        private void button2_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList)
+        {
+            panel13.BringToFront();
+        }
     }
 }
