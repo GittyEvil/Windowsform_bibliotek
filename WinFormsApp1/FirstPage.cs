@@ -41,6 +41,8 @@ namespace WinFormsApp1
             button14.Click += (sender, e) => button14_Click(sender, e, UserList, BookList);
             button24.Click += (sender, e) => button24_Click(sender, e, UserList, BookList);
             button2.Click += (sender, e) => button2_Click(sender, e, UserList, BookList);
+            button17.Click += (sender, e) => button17_Click(sender, e, BookList);
+            button25.Click += (sender, e) => button25_Click(sender, e, BookList);
 
 
         }
@@ -239,9 +241,18 @@ namespace WinFormsApp1
             panel11.BringToFront();
         }
 
-        private void button17_Click(object sender, EventArgs e)
+        private void button17_Click(object sender, EventArgs e, List<Book> BookList)
         {
             //tar bort bok (bibliotikare sida
+            panel15.BringToFront();
+            //denna knappen kommer göra alla böcker synliga 
+            for (var i = 0; i < BookList.Count; i++)
+            {
+                Book book = BookList[i];
+                var books = $"{i + 1}.{book.Titel} {book.Författare} {book.Serienummer} {book.Antal}";
+                //listofbooks.Text = books;
+                listBox2.Items.Add(books);
+            }
         }
 
         private void button15_Click(object sender, EventArgs e,List<Person> UserList)
@@ -403,6 +414,46 @@ namespace WinFormsApp1
         private void button2_Click(object sender, EventArgs e, List<Person> UserList, List<Book> BookList)
         {
             panel13.BringToFront();
+        }
+
+        private void button25_Click(object sender, EventArgs e, List<Book> BookList)
+        {
+            //knappen tar bort vald bok
+            var choice = textBox9.Text;
+            int number;
+
+            var isNumber = int.TryParse(choice, out number);
+
+            if (isNumber && number > 0 && number < BookList.Count + 1)
+            {
+                book = BookList[number - 1];
+                Book removeBook = BookList.FirstOrDefault(u => u.Serienummer == book.Serienummer)!;
+            }
+
+            BookList.Remove(book);
+            string json = JsonConvert.SerializeObject(BookList, Formatting.Indented);
+            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\Books.json", json);
+            panel3.BringToFront();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            panel3.BringToFront();
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //listboxen där alla böcker ska hamna
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            //input boxen man väljer bok
+        }
+
+        private void button27_Click_1(object sender, EventArgs e)
+        {
+            panel14.BringToFront();
         }
     }
 }

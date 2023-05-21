@@ -50,6 +50,11 @@ namespace WinFormsApp1
             this.nummerRegisterButton = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button27 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button24 = new System.Windows.Forms.Button();
@@ -115,9 +120,14 @@ namespace WinFormsApp1
             this.button14 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -128,6 +138,7 @@ namespace WinFormsApp1
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -307,6 +318,54 @@ namespace WinFormsApp1
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(698, 340);
             this.panel3.TabIndex = 1;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.label30);
+            this.panel15.Controls.Add(this.textBox9);
+            this.panel15.Controls.Add(this.button27);
+            this.panel15.Controls.Add(this.listBox2);
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(698, 339);
+            this.panel15.TabIndex = 2;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(156, 243);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(134, 15);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "vilken bok vill du ta bort";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(305, 239);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 23);
+            this.textBox9.TabIndex = 2;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(317, 273);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 1;
+            this.button27.Text = "Ta bort";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click_1);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 15;
+            this.listBox2.Location = new System.Drawing.Point(178, 77);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(369, 154);
+            this.listBox2.TabIndex = 0;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // panel13
             // 
@@ -843,7 +902,7 @@ namespace WinFormsApp1
             this.panel8.Controls.Add(this.button14);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.label17);
-            this.panel8.Location = new System.Drawing.Point(0, -1);
+            this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(701, 340);
             this.panel8.TabIndex = 7;
@@ -857,7 +916,6 @@ namespace WinFormsApp1
             this.button17.TabIndex = 8;
             this.button17.Text = "ta bort bok";
             this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button16
             // 
@@ -935,6 +993,44 @@ namespace WinFormsApp1
             this.label17.TabIndex = 0;
             this.label17.Text = "Bibliotek, Bibliotikarie";
             // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label29);
+            this.panel14.Controls.Add(this.button26);
+            this.panel14.Controls.Add(this.button25);
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(701, 341);
+            this.panel14.TabIndex = 9;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(294, 80);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(130, 15);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "vill du ta bort vald bok?";
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(376, 205);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(75, 23);
+            this.button26.TabIndex = 1;
+            this.button26.Text = "nej";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(272, 205);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(75, 23);
+            this.button25.TabIndex = 0;
+            this.button25.Text = "ta bort";
+            this.button25.UseVisualStyleBackColor = true;
+            // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -944,15 +1040,17 @@ namespace WinFormsApp1
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel14);
+            this.Controls.Add(this.panel15);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FirstPage";
             this.Text = "Form1";
@@ -961,6 +1059,8 @@ namespace WinFormsApp1
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -981,6 +1081,8 @@ namespace WinFormsApp1
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1070,5 +1172,14 @@ namespace WinFormsApp1
         private Button button24;
         private Label label28;
         private TextBox textBox8;
+        private Panel panel14;
+        private Label label29;
+        private Button button26;
+        private Button button25;
+        private Panel panel15;
+        private TextBox textBox9;
+        private Button button27;
+        private ListBox listBox2;
+        private Label label30;
     }
 }

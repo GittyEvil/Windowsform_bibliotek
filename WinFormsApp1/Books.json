@@ -1,19 +1,5 @@
 [
   {
-    "Titel": "Things Fall Apart",
-    "Serienummer": 1958,
-    "Antal": 209,
-    "Författare": "Chinua",
-    "Ledig": true
-  },
-  {
-    "Titel": "Fairy tales",
-    "Serienummer": 1836,
-    "Antal": 784,
-    "Författare": "Hans Christian Andersen",
-    "Ledig": true
-  },
-  {
     "Titel": "The Divine Comedy",
     "Serienummer": 1315,
     "Antal": 928,
@@ -704,6 +690,13 @@
     "Serienummer": 12,
     "Antal": 12345,
     "Författare": "Adam skogren",
+    "Ledig": true
+  },
+  {
+    "Titel": "Adrians äventyr",
+    "Serienummer": 1,
+    "Antal": 6969,
+    "Författare": "Emanuel Korvsson",
     "Ledig": true
   }
 ]
