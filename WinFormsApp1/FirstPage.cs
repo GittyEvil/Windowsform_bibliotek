@@ -18,9 +18,9 @@ namespace WinFormsApp1
 
         public FirstPage()
         {
-            string Data = File.ReadAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json");
+            string Data = File.ReadAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json");
             List<Person> UserList = JsonConvert.DeserializeObject<List<Person>>(Data)!;
-            string BookData = File.ReadAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json");
+            string BookData = File.ReadAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json");
             List<Book> BookList = JsonConvert.DeserializeObject<List<Book>>(BookData)!;
 
             InitializeComponent();
@@ -76,7 +76,7 @@ namespace WinFormsApp1
             UserList.Add(newUser);
 
             string dataToSave = JsonConvert.SerializeObject(UserList);
-            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", dataToSave);
 
             panel1.BringToFront();
 
@@ -193,16 +193,24 @@ namespace WinFormsApp1
             //knappen för att låna bok
             BookHandler.Handlebook.RentBook(book, User, BookList, UserList, UserisRenting);
             //label13.Text = line;
-            panel3.BringToFront();
-            
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
+
         }
         public static void UpdateJson(List<Person> UserList, List<Book> BookList)
         {
             string jsonString = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json", jsonString);
+            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json", jsonString);
 
             jsonString = JsonConvert.SerializeObject(BookList, Formatting.Indented);
-            File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json", jsonString);
+            File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json", jsonString);
         }
 
         private void button9_Click(object sender, EventArgs e, Person User,List<Book> BookList, List<Person> UserList, bool UserisRenting)
@@ -211,8 +219,17 @@ namespace WinFormsApp1
             
             string line2 = "Kunde inte hitta boken i användarens hyrda böcker.";
             label13.Text = line2;
+            
             BookHandler.Handlebook.ReturnBooks(book, User, BookList, UserList, ref UserisRenting);
-            panel3.BringToFront();
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -227,7 +244,15 @@ namespace WinFormsApp1
             int newPassword = Int32.Parse(textBox1.Text);
 
             AccountHandler.UserInfoChanger(UserList,User, BookList, newPassword);
-            panel3.BringToFront();
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -299,11 +324,19 @@ namespace WinFormsApp1
             //ger nytt lösenord till användaren som hittats
             changeUser.lösenord = newPassword;
 
-            string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
+            string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
             string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
             File.WriteAllText(data, json);
-            panel3.BringToFront();
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
 
 
@@ -322,9 +355,17 @@ namespace WinFormsApp1
             BookList.Add(newBook);
 
             string dataToSave = JsonConvert.SerializeObject(BookList);
-            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\Books.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\Books.json", dataToSave);
 
-            panel3.BringToFront();
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -341,7 +382,15 @@ namespace WinFormsApp1
 
         private void button23_Click(object sender, EventArgs e)
         {
-            panel3.BringToFront();
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
 
         private void button22_Click(object sender, EventArgs e, List<Person> UserList)
@@ -360,8 +409,16 @@ namespace WinFormsApp1
             
             UserList.Remove(chosenUser);
             string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\userAccounts.json", json);
-            panel3.BringToFront();
+            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", json);
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
         
         private void button13_Click(object sender, EventArgs e)
@@ -432,13 +489,21 @@ namespace WinFormsApp1
 
             BookList.Remove(book);
             string json = JsonConvert.SerializeObject(BookList, Formatting.Indented);
-            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotek-Windowsform-main\\Bibliotek-Windowsform-main\\WinFormsApp1\\WinFormsApp1\\Books.json", json);
+            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\Books.json", json);
             panel3.BringToFront();
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
-            panel3.BringToFront();
+            var bibliotikarie = User.bibliotikarie;
+            if (bibliotikarie == false)
+            {
+                panel4.BringToFront();
+            }
+            if (bibliotikarie == true)
+            {
+                panel8.BringToFront();
+            }
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)

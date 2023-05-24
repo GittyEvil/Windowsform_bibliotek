@@ -16,7 +16,7 @@ namespace Bibliotektemp
         //kollar genom lista och ifall information stämmer loggas man in
         public static void LoginPage(bool UserisRenting)
         {
-            string Data = File.ReadAllText("C:\\Users\\adria\\Documents\\Bibliotektemp\\Bibliotektemp\\userAccounts.json");
+            string Data = File.ReadAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json");
             List<Person> UserList = JsonConvert.DeserializeObject<List<Person>>(Data)!;
 
 
@@ -63,7 +63,7 @@ namespace Bibliotektemp
             UserList.Add(newUser);
 
             string dataToSave = JsonConvert.SerializeObject(UserList);
-            File.WriteAllText("C:\\Users\\adria\\Documents\\Bibliotektemp\\Bibliotektemp\\userAccounts.json", dataToSave);
+            File.WriteAllText("C:\\Users\\adrian.stude\\Documents\\Prog2\\Windowsform_bibliotek\\WinFormsApp1\\userAccounts.json", dataToSave);
 
             LoginPage(UserisRenting);
 
@@ -81,7 +81,7 @@ namespace Bibliotektemp
                 //ger nytt lösenord till användaren som hittats
                 loggedInUser.lösenord = newPassword1;
 
-                string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
+                string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
                 string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
                 File.WriteAllText(data, json);

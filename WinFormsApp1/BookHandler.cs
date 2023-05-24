@@ -36,7 +36,7 @@ namespace Bibliotektemp
 
                     loggedInUser.RentedBooks.Add(rentedBook);
 
-                    string data = @"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json";
+                    string data = @"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json";
                     string json = JsonConvert.SerializeObject(UserList, Formatting.Indented);
 
                     File.WriteAllText(data, json);
@@ -57,10 +57,10 @@ namespace Bibliotektemp
             public static void UpdateJson(List<Person> UserList, List<Book> BookList)
             {
                 string jsonString = JsonConvert.SerializeObject(UserList, Formatting.Indented);
-                File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\userAccounts.json", jsonString);
+                File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\userAccounts.json", jsonString);
 
                 jsonString = JsonConvert.SerializeObject(BookList, Formatting.Indented);
-                File.WriteAllText(@"C:\Users\adria\Documents\Bibliotek-Windowsform-main\Bibliotek-Windowsform-main\WinFormsApp1\WinFormsApp1\Books.json", jsonString);
+                File.WriteAllText(@"C:\Users\adrian.stude\Documents\Prog2\Windowsform_bibliotek\WinFormsApp1\Books.json", jsonString);
             }
 
             public static void ReturnBooks(Book book, Person User, List<Book> BookList, List<Person> UserList,ref bool UserisRenting)
